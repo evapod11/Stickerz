@@ -13,12 +13,33 @@ body {
 }
 
 /* Header Styles */
+/* Header and Logo Centering */
 header {
-    background-color: #222;
-    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack navigation below the logo if needed */
     padding: 1em 0;
-    text-align: center;
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    justify-content: center;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+    border-radius: 0;
+}
+
+/* Adjust header nav if needed */
+header nav ul {
+    margin-top: 1em; /* Add space below centered logo */
+}
+
 
 header .logo h1 {
     margin: 0;
@@ -144,19 +165,6 @@ footer {
     padding: 1em;
     text-align: center;
     margin-top: 2em;
-}
-
-/* Logo Styles */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5em; /* Space between the image and text */
-}
-
-.logo img {
-    width: 80px; /* Doubled the width for larger size */
-    height: auto;
-    border-radius: 0; /* No circular effect */
 }
 
 /* Carousel Container */
