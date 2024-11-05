@@ -1,6 +1,6 @@
 // Import required modules
 const express = require('express');
-const stripe = require('stripe')('YOUR_SECRET_KEY'); // Replace with your Stripe secret key
+const stripe = require('stripe')('sk_live_...qD2U'); // Replace with your Stripe secret key
 const cors = require('cors');
 
 // Initialize the Express app
@@ -48,3 +48,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
