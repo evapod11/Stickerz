@@ -243,6 +243,11 @@ nav>button:hover>svg {
 }
 
 
+button:hover {
+    background-color: #a44c00; /* Darker on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
 /* Add some transitions for smoother hover effects */
 header nav ul li {
     position: relative; /* Necessary for positioning the tooltip */
@@ -251,13 +256,13 @@ header nav ul li {
 header nav ul li a {
     display: block;
     padding: 10px 20px; /* Adjust padding as needed */
-    color: #6785b7;
+    color: #8b13a1;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 header nav ul li a:hover {
-    background-color: #a885ab;
+    background-color: #c79dcc;
     transform: scale(1.05); /* Slightly expand on hover */
 }
 
@@ -267,8 +272,8 @@ header nav ul li:hover::after {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #333;
-    color: #8b13a1;
+    background-color: #490062;
+    color: #e775fb;
     padding: 5px 10px;
     border-radius:  
  5px;
