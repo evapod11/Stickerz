@@ -1,6 +1,6 @@
 // server.js
 const express = require('express');
-STRIPE_API_KEY=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
+const stripe = require('stripe')(process.env.STRIPE_API_KEY);
 const cors = require('cors');
 const path = require('path'); // Import path for serving static files
 
