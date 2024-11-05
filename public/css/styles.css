@@ -242,15 +242,6 @@ nav>button:hover>svg {
     }
 }
 
-button {
-    background-color: #d45d00; /* Primary button color */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
 
 button:hover {
     background-color: #a44c00; /* Darker on hover */
