@@ -1,19 +1,25 @@
-// Import required modules
+// server.js
 const express = require('express');
-const stripe = require('stripe')('sk_live_...qD2U'); // Replace with your Stripe secret key
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const cors = require('cors');
+const path = require('path'); // Import path for serving static files
 
-// Initialize the Express app
 const app = express();
 
-// Middleware setup
-app.use(cors()); // Allows cross-origin requests
-app.use(express.json()); // Parses incoming JSON requests
+app.use(cors());
+app.use(express.json());
 
-// Route to create a checkout session
+// Serve static files (like HTML, CSS, JS) from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Define route for the root URL
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serve your main HTML file
+});
+
+// Define route to create a Stripe checkout session
 app.post('/create-checkout-session', async (req, res) => {
     try {
-        // Create a new checkout session
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             line_items: [
@@ -21,31 +27,25 @@ app.post('/create-checkout-session', async (req, res) => {
                     price_data: {
                         currency: 'usd',
                         product_data: {
-                            name: 'Sticker Product', // Name of the product
-                            images: ['https://example.com/path-to-your-image.jpg'], // URL of your product image
+                            name: 'Sticker Product',
+                            images: ['https://yourdomain.com/path-to-image.jpg'],
                         },
-                        unit_amount: 2000, // Amount in cents ($20.00)
+                        unit_amount: 2000, // $20.00 in cents
                     },
-                    quantity: 1, // Quantity of the item
+                    quantity: 1,
                 },
             ],
             mode: 'payment',
-            success_url: 'https://yourdomain.com/success.html', // URL to redirect upon success
-            cancel_url: 'https://yourdomain.com/cancel.html', // URL to redirect upon cancellation
+            success_url: 'https://yourdomain.com/success.html',
+            cancel_url: 'https://yourdomain.com/cancel.html',
         });
 
-        // Send the session ID to the client
         res.json({ id: session.id });
     } catch (error) {
-        // Handle errors
         console.error('Error creating checkout session:', error);
         res.status(500).json({ error: error.message });
     }
 });
 
-// Start the server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
