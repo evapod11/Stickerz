@@ -158,6 +158,7 @@ footer {
     height: auto;
     border-radius: 0; /* No circular effect */
 }
+
 /* Carousel Container */
 .carousel-container {
     text-align: center;
@@ -179,7 +180,7 @@ footer {
     position: relative;
     transition: transform 0.3s, border 0.3s;
     border: 5px solid transparent; /* Initial transparent border */
-    border-image-source: url('images/border.jpg'); /* Border image */
+    border-image-source: url('images/frame_pattern_background.jpg'); /* Border image */
     border-image-slice: 30%; /* Adjust slice as needed for the border */
     border-image-repeat: stretch;
     overflow: hidden;
