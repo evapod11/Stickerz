@@ -131,6 +131,45 @@ button:hover {
 }
 
 /* Add some transitions for smoother hover effects */
-header nav ul {
-    margin-top: 1em; /* Add space below centered logo */
+header nav ul li {
+    position: relative; /* Necessary for positioning the tooltip */
+}
+
+header nav ul li a {
+    display: block;
+    padding: 10px 20px; /* Adjust padding as needed */
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+header nav ul li a:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05); /* Slightly expand on hover */
+}
+
+header nav ul li:hover::after {
+    content: "More Info"; /* Tooltip content */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius:  
+ 5px;
+    visibility: visible; /* Show the tooltip on hover */
+    opacity: 1;
+}
+
+header nav ul li::after {
+    content: ""; /* Hide the tooltip initially */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
 }
