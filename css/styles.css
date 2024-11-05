@@ -1,31 +1,18 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #fffcf2, #f1f1f1); /* Soft gradient background */
+    color: #333; /* Darker text for readability */
 }
 
-/* Header Styles */
-header {
-    background-color: #222;
-    color: #fff;
-    padding: 1em 0;
-    text-align: center;
-}
-/* Header and Logo Centering */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; /* Stack navigation below the logo if needed */
     padding: 1em 0;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .logo {
@@ -36,154 +23,20 @@ header {
 }
 
 .logo img {
-    width: 80px;
-    height: auto;
-    border-radius: 0;
-}
-
-header .logo h1 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    margin-top: 0.5em;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Intro Section (Home Page) */
-.intro {
-    padding: 2em;
-    text-align: center;
-    background-color: #e6e6e6;
-}
-
-.intro h2 {
-    margin-bottom: 1em;
-}
-
-.intro p {
-    max-width: 600px;
-    margin: 0 auto 1em;
-}
-
-.intro .btn {
-    display: inline-block;
-    padding: 0.5em 1em;
-    color: #fff;
-    background-color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* Categories Page */
-.categories {
-    padding: 2em;
-    text-align: center;
-}
-
-.category-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    justify-content: center;
-}
-
-.category-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    width: 200px;
-    text-align: center;
-    transition: transform 0.2s;
-}
-
-.category-item img {
-    width: 100%;
-    height: auto;
-}
-
-.category-item h3 {
-    padding: 0.5em;
-    background-color: #f4f4f4;
-}
-
-.category-item:hover {
-    transform: scale(1.05);
-}
-
-/* Cart Page */
-.cart {
-    padding: 2em;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-#cart-items {
-    margin: 1em 0;
-    padding: 1em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f4f4f4;
-}
-
-#cart-items div {
-    margin-bottom: 1em;
-}
-
-button {
-    padding: 0.5em 1em;
-    margin: 0.5em;
-    border: none;
-    color: #fff;
-    background-color: #333;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-/* Footer */
-footer {
-    background-color: #222;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
-    margin-top: 2em;
-}
-
-/* Logo Styles */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5em; /* Space between the image and text */
-}
-
-.logo img {
-    width: 80px; /* Doubled the width for larger size */
+    width: 80px; /* Logo size */
     height: auto;
     border-radius: 0; /* No circular effect */
 }
 
-/* Carousel Container */
-.carousel-container {
-    text-align: center;
-    padding: 2em;
+h1 {
+    font-size: 2.5em; /* Larger title for emphasis */
+    margin: 0;
+    color: #d45d00; /* Custom color for the title */
+}
+
+.carousel-container h2 {
+    font-size: 2em; /* Subtitle for featured stickers */
+    color: #d45d00;
 }
 
 .carousel {
@@ -195,18 +48,17 @@ footer {
     justify-content: center;
 }
 
-/* Carousel Items */
 .carousel-item {
     flex: 0 0 200px; /* Fixed size for items */
-    position: relative;
-    transition: transform 0.3s, border 0.3s;
-    border: 5px solid transparent; /* Initial transparent border */
-    border-image-source: url('images/frame_pattern_background.jpg'); /* Border image */
-    border-image-slice: 30%; /* Adjust slice as needed for the border */
-    border-image-repeat: stretch;
+    background-color: white; /* White background for items */
+    border-radius: 10px; /* Rounded corners for items */
     overflow: hidden;
+    padding: 10px; /* Padding around the image */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Carousel Item Image */
 .carousel-item img {
     width: 100%;
     height: auto;
@@ -215,12 +67,9 @@ footer {
 
 /* Hover Effect: Expand and Border */
 .carousel-item:hover {
-    transform: scale(1.1); /* Expands slightly on hover */
-    border: 5px solid;
-}
-
-.carousel-item:hover img {
-    transform: scale(1.05); /* Zooms image slightly on hover */
+    transform: scale(1.1); /* Slightly expands on hover */
+    border: 5px solid #d45d00; /* Add a border color on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
 }
 
 /* Keyframes for Initial Motion */
@@ -228,4 +77,25 @@ footer {
     0% { transform: translateX(0); }
     50% { transform: translateX(-100px); } /* Adjust based on carousel width */
     100% { transform: translateX(0); }
+}
+
+/* Button Styles */
+button {
+    background-color: #d45d00; /* Primary button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #a44c00; /* Darker on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+/* Add some transitions for smoother hover effects */
+header nav ul {
+    margin-top: 1em; /* Add space below centered logo */
 }

@@ -48,3 +48,19 @@ document.addEventListener("DOMContentLoaded", function() {
         carousel.style.animation = 'none';
     }, 5000); // Adjust the timing to match your animation duration
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const header = document.querySelector('header');
+    
+    // After 5 seconds, stop the carousel's animation
+    setTimeout(() => {
+        const carousel = document.querySelector('.carousel');
+        carousel.style.animation = 'none';
+    }, 5000); // Adjust the timing to match your animation duration
+
+    document.addEventListener("scroll", function() {
+        const scrollPosition = window.scrollY;
+        // Change header background based on scroll position
+        header.style.backgroundColor = `rgba(255, 255, 255, ${0.9 - scrollPosition / 1000})`;
+    });
+});
