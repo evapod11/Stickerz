@@ -64,7 +64,7 @@
         const stripe = Stripe('pk_live_51QHiopF9O2YlgNtLPl4MNteuolaJniz5Ruj3SbPMUyvsOOlXuivTNFTuytLZfnN9RcjVSe8xX93v8p3Qui9r5YNF00BWUArM4N'); // Replace with your Stripe publishable key
 
         document.getElementById('checkout-button').addEventListener('click', () => {
-            fetch('https://stickered.herokuapp.com/create-checkout-session', { // Replace with your backend endpoint
+            fetch('/create-checkout-session', {
                 method: 'POST',
             })
             .then((response) => response.json())
