@@ -40,3 +40,11 @@ function clearCart() {
 
 // Initial display of cart contents when the page loads
 document.addEventListener('DOMContentLoaded', updateCartDisplay);
+document.addEventListener("DOMContentLoaded", function() {
+    const carousel = document.querySelector('.carousel');
+    
+    // After 5 seconds, stop the carousel's animation
+    setTimeout(() => {
+        carousel.style.animation = 'none';
+    }, 5000); // Adjust the timing to match your animation duration
+});

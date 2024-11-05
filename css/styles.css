@@ -158,3 +158,52 @@ footer {
     height: auto;
     border-radius: 50%; /* Optional: for a circular logo */
 }
+/* Carousel Container */
+.carousel-container {
+    text-align: center;
+    padding: 2em;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    gap: 1em;
+    animation: scroll 5s linear infinite; /* Initial scroll animation */
+    padding: 1em;
+    justify-content: center;
+}
+
+/* Carousel Items */
+.carousel-item {
+    flex: 0 0 200px; /* Fixed size for items */
+    position: relative;
+    transition: transform 0.3s, border 0.3s;
+    border: 5px solid transparent; /* Initial transparent border */
+    border-image-source: url('images/border.jpg'); /* Border image */
+    border-image-slice: 30%; /* Adjust slice as needed for the border */
+    border-image-repeat: stretch;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover Effect: Expand and Border */
+.carousel-item:hover {
+    transform: scale(1.1); /* Expands slightly on hover */
+    border: 5px solid;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.05); /* Zooms image slightly on hover */
+}
+
+/* Keyframes for Initial Motion */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-100px); } /* Adjust based on carousel width */
+    100% { transform: translateX(0); }
+}
