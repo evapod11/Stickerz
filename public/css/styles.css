@@ -141,7 +141,7 @@ button {
 body{
     min-height: 100svh;
     background-color: rgb(15, 23, 42);
-    color: white;
+    color: rgb(131, 129, 129);
     display: grid;
     place-content: center;
     font-size: 1rem;
@@ -149,8 +149,8 @@ body{
 }
 
 nav {
-    --_clr-txt: rgb(255, 255, 255);
-    --_clr-txt-svg: rgb(147, 158, 184);
+    --_clr-txt: rgb(255, 0, 255);
+    --_clr-txt-svg: rgb(0, 150, 184);
     --_ani-speed: 6s; /* speed of rotating text */
 
     display: flex;
