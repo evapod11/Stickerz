@@ -115,4 +115,46 @@ header nav ul li a:hover {
     margin: 1em 0;
     padding: 1em;
     border: 1px solid #ddd;
-    border-radius: 
+    border-radius: 5px;
+    background-color: #f4f4f4;
+}
+
+#cart-items div {
+    margin-bottom: 1em;
+}
+
+button {
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    border: none;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    margin-top: 2em;
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5em; /* Space between the image and text */
+}
+
+.logo img {
+    width: 40px; /* Adjust width as needed */
+    height: auto;
+    border-radius: 50%; /* Optional: for a circular logo */
+}
