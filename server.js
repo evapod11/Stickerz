@@ -1,6 +1,6 @@
 // server.js
 const express = require('express');
-const stripe = require('stripe')(process.env.sk_live_...KR64);
+const stripe = require('stripe')(process.env.STRIPE_API_KEY);
 const cors = require('cors');
 const path = require('path'); // Import path for serving static files
 
