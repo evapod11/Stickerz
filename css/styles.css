@@ -156,7 +156,7 @@ footer {
 .logo img {
     width: 40px; /* Adjust width as needed */
     height: auto;
-    border-radius: 50%; /* Optional: for a circular logo */
+    border-radius: 82%; /* Optional: for a circular logo */
 }
 /* Carousel Container */
 .carousel-container {
