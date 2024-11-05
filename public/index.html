@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stickered</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Your CSS file for styles -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- Your CSS file for styles -->
     <script src="https://js.stripe.com/v3/"></script> <!-- Stripe.js library -->
 </head>
 <body>
     <div class="logo">
-        <img src="images/mr_rain.JPG" alt="mr_rain logo"> <!-- Your logo -->
+        <img src="/images/mr_rain.JPG" alt="mr_rain logo"> <!-- Your logo -->
         <h1>Stickered</h1> <!-- Title -->
     </div>
 
@@ -17,7 +17,7 @@
     
     <!-- Example of a sticker product display -->
     <div class="product">
-        <img src="images/sample_sticker.jpg" alt="Sample Sticker" class="product-image"> <!-- Product image -->
+        <img src="/images/sample_sticker.jpg" alt="Sample Sticker" class="product-image"> <!-- Product image -->
         <h3>Sticker Name</h3> <!-- Product name -->
         <p>$20.00</p> <!-- Product price -->
         <button id="checkout-button">Checkout</button> <!-- Checkout button -->
@@ -27,7 +27,7 @@
         const stripe = Stripe('pk_live_51QHiopF9O2YlgNtLPl4MNteuolaJniz5Ruj3SbPMUyvsOOlXuivTNFTuytLZfnN9RcjVSe8xX93v8p3Qui9r5YNF00BWUArM4N'); // Replace with your Stripe publishable key
 
         document.getElementById('checkout-button').addEventListener('click', () => {
-            fetch('https://your-backend-url/create-checkout-session', { // Replace with your backend endpoint
+            fetch('https://stickered.herokuapp.com/create-checkout-session', { // Replace with your backend endpoint
                 method: 'POST',
             })
             .then((response) => response.json())
