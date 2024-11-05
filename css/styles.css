@@ -7,19 +7,22 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
 }
 
 /* Header Styles */
 header {
-    background-color: #333;
+    background-color: #222;
     color: #fff;
-    padding: 1em;
+    padding: 1em 0;
     text-align: center;
 }
 
 header .logo h1 {
     margin: 0;
+    font-size: 1.5em;
 }
 
 header nav ul {
@@ -27,11 +30,41 @@ header nav ul {
     display: flex;
     justify-content: center;
     gap: 1em;
+    margin-top: 0.5em;
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Intro Section (Home Page) */
+.intro {
+    padding: 2em;
+    text-align: center;
+    background-color: #e6e6e6;
+}
+
+.intro h2 {
+    margin-bottom: 1em;
+}
+
+.intro p {
+    max-width: 600px;
+    margin: 0 auto 1em;
+}
+
+.intro .btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 /* Categories Page */
@@ -42,29 +75,36 @@ header nav ul li a {
 
 .category-grid {
     display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
     justify-content: center;
-    gap: 2em;
-    margin-top: 1em;
 }
 
 .category-item {
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
-    width: 150px;
+    width: 200px;
     text-align: center;
+    transition: transform 0.2s;
 }
 
 .category-item img {
     width: 100%;
+    height: auto;
 }
 
 .category-item h3 {
     padding: 0.5em;
+    background-color: #f4f4f4;
+}
+
+.category-item:hover {
+    transform: scale(1.05);
 }
 
 /* Cart Page */
-#cart {
+.cart {
     padding: 2em;
     max-width: 600px;
     margin: 0 auto;
@@ -73,28 +113,6 @@ header nav ul li a {
 
 #cart-items {
     margin: 1em 0;
-}
-
-#cart-items div {
-    margin-bottom: 1em;
-}
-
-button {
-    padding: 0.5em 1em;
-    margin: 0.5em;
-    cursor: pointer;
-}
-
-#total-price {
-    font-weight: bold;
-    margin-top: 1em;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: #fff;
     padding: 1em;
-    text-align: center;
-    margin-top: 2em;
-}
+    border: 1px solid #ddd;
+    border-radius: 
