@@ -154,9 +154,9 @@ footer {
 }
 
 .logo img {
-    width: 40px; /* Adjust width as needed */
+    width: 80px; /* Doubled the width for larger size */
     height: auto;
-    border-radius: 82%; /* Optional: for a circular logo */
+    border-radius: 0; /* No circular effect */
 }
 /* Carousel Container */
 .carousel-container {
