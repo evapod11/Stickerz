@@ -40,27 +40,62 @@ function clearCart() {
 
 // Initial display of cart contents when the page loads
 document.addEventListener('DOMContentLoaded', updateCartDisplay);
+
+// Sticker data array
+const stickers = [
+    { name: 'Sticker 1', price: 10, img: 'images/gray_skull.JPG' },
+    { name: 'Sticker 2', price: 15, img: 'images/beige_skull.JPG' },
+    { name: 'Sticker 3', price: 20, img: 'images/mr_rain.JPG' },
+    // Add more stickers as needed
+];
+
+// Populate the carousel with sticker items
+const carousel = document.querySelector('.carousel');
+stickers.forEach(sticker => {
+    const item = document.createElement('div');
+    item.className = 'carousel-item';
+    item.innerHTML = `
+        <img src="${sticker.img}" alt="${sticker.name}">
+        <div class="item-details">
+            <h3>${sticker.name}</h3>
+            <p>$${sticker.price.toFixed(2)}</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>`;
+    carousel.appendChild(item);
+});
+
+// Add event listeners for the "Add to Cart" buttons
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const carouselItem = event.target.closest('.carousel-item');
+        const name = carouselItem.querySelector('h3').innerText;
+        const price = parseFloat(carouselItem.querySelector('p').innerText.replace('$', ''));
+        
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+            existingItem.quantity += 1; // Increase quantity if already in cart
+        } else {
+            cart.push({ name, price, quantity: 1 }); // Add new item to cart
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartDisplay(); // Update cart display
+        alert(`${name} has been added to your cart!`); // Confirmation message
+    });
+});
+
+// After 5 seconds, stop the carousel's animation
 document.addEventListener("DOMContentLoaded", function() {
     const carousel = document.querySelector('.carousel');
     
-    // After 5 seconds, stop the carousel's animation
     setTimeout(() => {
         carousel.style.animation = 'none';
     }, 5000); // Adjust the timing to match your animation duration
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const header = document.querySelector('header');
-    
-    // After 5 seconds, stop the carousel's animation
-    setTimeout(() => {
-        const carousel = document.querySelector('.carousel');
-        carousel.style.animation = 'none';
-    }, 5000); // Adjust the timing to match your animation duration
-
-    document.addEventListener("scroll", function() {
-        const scrollPosition = window.scrollY;
-        // Change header background based on scroll position
-        header.style.backgroundColor = `rgba(255, 255, 255, ${0.9 - scrollPosition / 1000})`;
-    });
+// Change header background based on scroll position
+const header = document.querySelector('header');
+document.addEventListener("scroll", function() {
+    const scrollPosition = window.scrollY;
+    header.style.backgroundColor = `rgba(255, 255, 255, ${0.9 - scrollPosition / 1000})`;
 });

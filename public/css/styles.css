@@ -58,6 +58,17 @@ h1 {
     transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
 }
 
+.item-details {
+    display: none; /* Initially hide details */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 10px;
+    text-align: center;
+}
+
 /* Carousel Item Image */
 .carousel-item img {
     width: 100%;
@@ -72,6 +83,22 @@ h1 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
 }
 
+.carousel-item:hover .item-details {
+    display: block; /* Show details on hover */
+}
+
+.add-to-cart {
+    background-color: #d45d00; /* Primary button color */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #a44c00; /* Darker on hover */
+}
 /* Keyframes for Initial Motion */
 @keyframes scroll {
     0% { transform: translateX(0); }
