@@ -10,7 +10,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column; /* Stack navigation below the logo if needed */
-    padding: 1em 0;
+    padding: 1em;
     background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
