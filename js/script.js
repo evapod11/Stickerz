@@ -83,14 +83,17 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
         alert(`${name} has been added to your cart!`); // Confirmation message
     });
 });
-
-// After 5 seconds, stop the carousel's animation
+//carousel timer 
 document.addEventListener("DOMContentLoaded", function() {
     const carousel = document.querySelector('.carousel');
-    
+
+    // Start the animation
+    carousel.classList.add('animate-carousel');
+
+    // Stop the animation after a certain duration (5 seconds here)
     setTimeout(() => {
-        carousel.style.animation = 'none';
-    }, 5000); // Adjust the timing to match your animation duration
+        carousel.classList.remove('animate-carousel');
+    }, 2000); // Adjust to match your animation duration
 });
 
 // Change header background based on scroll position

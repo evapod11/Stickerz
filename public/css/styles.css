@@ -43,9 +43,17 @@ h1 {
     display: flex;
     overflow: hidden;
     gap: 1em;
-    animation: scroll 5s linear infinite; /* Initial scroll animation */
     padding: 1em;
     justify-content: center;
+}
+
+.animate-carousel {
+    animation: scroll 5s linear infinite; /* Add the infinite scroll animation class */
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); } /* Move based on item width */
 }
 
 .carousel-item {
