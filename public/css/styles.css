@@ -11,8 +11,8 @@ header {
     align-items: center;
     flex-direction: column; /* Stack navigation below the logo if needed */
     padding: 1em;
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: rgba(240, 180, 180, 0.9); /* Slightly transparent white */
+    box-shadow: 0 2px 5px rgba(110, 65, 65, 0.1); /* Subtle shadow for depth */
 }
 
 .logo {
@@ -31,12 +31,12 @@ header {
 h1 {
     font-size: 2.5em; /* Larger title for emphasis */
     margin: 0;
-    color: #d45d00; /* Custom color for the title */
+    color: #643779; /* Custom color for the title */
 }
 
 .carousel-container h2 {
     font-size: 2em; /* Subtitle for featured stickers */
-    color: #d45d00;
+    color: #af4482;
 }
 
 .carousel {
@@ -58,7 +58,7 @@ h1 {
 
 .carousel-item {
     flex: 0 0 200px; /* Fixed size for items */
-    background-color: white; /* White background for items */
+    background-color: rgb(199, 108, 151); /* White background for items */
     border-radius: 10px; /* Rounded corners for items */
     overflow: hidden;
     padding: 10px; /* Padding around the image */
@@ -86,7 +86,7 @@ h1 {
 
 /* Hover Effect: Expand and Border */
 .carousel-item:hover {
-    transform: scale(1.1); /* Slightly expands on hover */
+    transform: scale(1.5); /* Slightly expands on hover */
     border: 5px solid #d45d00; /* Add a border color on hover */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
 }
