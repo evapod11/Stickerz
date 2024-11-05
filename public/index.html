@@ -8,20 +8,57 @@
     <script src="https://js.stripe.com/v3/"></script> <!-- Stripe.js library -->
 </head>
 <body>
-    <div class="logo">
-        <img src="/images/mr_rain.JPG" alt="mr_rain logo"> <!-- Your logo -->
-        <h1>Stickered</h1> <!-- Title -->
-    </div>
+    <header>
+        <div class="logo">
+            <img src="/images/mr_rain.JPG" alt="mr_rain logo"> <!-- Your logo -->
+            <h1>Stickered</h1> <!-- Title -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="view-cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <h2>Our Stickers</h2> <!-- Optional heading for your product section -->
-    
-    <!-- Example of a sticker product display -->
-    <div class="product">
-        <img src="/images/gray_skull.JPG" alt="Sample Sticker" class="product-image"> <!-- Product image -->
-        <h3>Sticker Name</h3> <!-- Product name -->
-        <p>$20.00</p> <!-- Product price -->
-        <button id="checkout-button">Checkout</button> <!-- Checkout button -->
-    </div>
+    <main>
+        <section class="intro">
+            <h2>Your One-Stop Shop for Creative Stickers</h2>
+            <p>Discover unique, hand-made stickers perfect for decorating your favorite things. Whether you love nature, inspirational quotes, or custom designs, there's something here for you!</p>
+            <a href="categories.html" class="btn">Shop Now</a>
+        </section>
+
+        <section class="carousel-container">
+            <h2>Featured Stickers</h2>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="images/gray_skull.JPG" alt="Sticker 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/beige_skull.JPG" alt="Sticker 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/mr_rain.JPG" alt="Sticker 3">
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </section>
+
+        <section class="product-display">
+            <h2>Our Stickers</h2>
+            <div class="product">
+                <img src="images/sample_sticker.jpg" alt="Sample Sticker" class="product-image"> <!-- Product image -->
+                <h3>Sticker Name</h3> <!-- Product name -->
+                <p>$20.00</p> <!-- Product price -->
+                <button id="checkout-button">Checkout</button> <!-- Checkout button -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Aicha's Stickers. All rights reserved.</p>
+    </footer>
 
     <script>
         const stripe = Stripe('pk_live_51QHiopF9O2YlgNtLPl4MNteuolaJniz5Ruj3SbPMUyvsOOlXuivTNFTuytLZfnN9RcjVSe8xX93v8p3Qui9r5YNF00BWUArM4N'); // Replace with your Stripe publishable key
