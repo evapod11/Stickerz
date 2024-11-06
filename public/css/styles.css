@@ -116,17 +116,17 @@ h1 {
 
 /* Button Styles */
 button {
-    background-color: #d45d00; /* Primary button color */
-    color: white;
+    background-color: #c01f5f; /* Primary button color */
+    color: rgb(250, 192, 221);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.8s, transform 0.2s;
 }
 
 button:hover {
-    background-color: #a44c00; /* Darker on hover */
+    background-color: #d0a0cc; /* Darker on hover */
     transform: scale(1.05); /* Slightly larger on hover */
 }
 
