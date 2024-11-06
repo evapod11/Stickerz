@@ -11,8 +11,8 @@ header {
     align-items: center;
     flex-direction: column; /* Stack navigation below the logo if needed */
     padding: 1em;
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: rgba(240, 180, 180, 0.9); /* Slightly transparent white */
+    box-shadow: 0 2px 5px rgba(110, 65, 65, 0.1); /* Subtle shadow for depth */
 }
 
 .logo {
@@ -31,12 +31,12 @@ header {
 h1 {
     font-size: 2.5em; /* Larger title for emphasis */
     margin: 0;
-    color: #d45d00; /* Custom color for the title */
+    color: #643779; /* Custom color for the title */
 }
 
 .carousel-container h2 {
     font-size: 2em; /* Subtitle for featured stickers */
-    color: #d45d00;
+    color: #af4482;
 }
 
 .carousel {
@@ -58,7 +58,7 @@ h1 {
 
 .carousel-item {
     flex: 0 0 200px; /* Fixed size for items */
-    background-color: white; /* White background for items */
+    background-color: rgb(199, 108, 151); /* White background for items */
     border-radius: 10px; /* Rounded corners for items */
     overflow: hidden;
     padding: 10px; /* Padding around the image */
@@ -73,6 +73,7 @@ h1 {
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    background-blend-mode: darken;
     padding: 10px;
     text-align: center;
 }
@@ -105,7 +106,7 @@ h1 {
 }
 
 .add-to-cart:hover {
-    background-color: #a44c00; /* Darker on hover */
+    background-color: #f200fa; /* Darker on hover */
 }
 /* Keyframes for Initial Motion */
 @keyframes scroll {
@@ -115,18 +116,136 @@ h1 {
 }
 
 /* Button Styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* reset button */
 button {
-    background-color: #c01f5f; /* Primary button color */
-    color: rgb(250, 192, 221);
+    appearance: none;
+    background-color: transparent;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.8s, transform 0.2s;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    text-decoration: none;
+    text-transform: none;
+    line-height: normal;
+    overflow: visible;
 }
 
+body{
+    min-height: 100svh;
+    background-color: rgb(15, 23, 42);
+    color: rgb(131, 129, 129);
+    display: grid;
+    place-content: center;
+    font-size: 1rem;
+    font-family: system-ui;
+}
+
+nav {
+    --_clr-txt: rgb(255, 0, 255);
+    --_clr-txt-svg: rgb(0, 150, 184);
+    --_ani-speed: 6s; /* speed of rotating text */
+
+    display: flex;
+    /*flex-wrap: wrap;*/
+    gap: 1rem;
+    font-size: 1.4rem;
+}
+
+nav>button {
+    position: relative;
+    display: grid;
+    place-content: center;
+    grid-template-areas: 'stack';
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* place button items on top of each other */
+nav>button>span {
+    transition: all 300ms ease-in-out;
+    grid-area: stack;
+}
+/* nav icon */
+nav>button>span:last-of-type {
+    margin-top: 0.25rem;
+    transform: scale(0);
+    transition-delay: 0ms;
+    border-radius: 50%;
+}
+/* hover - hide text */
+nav>button:focus-visible>span:first-of-type,
+nav>button:hover>span:first-of-type {
+    transform: scale(0);
+}
+/* hover - reveal icon */
+nav>button:focus-visible>span:last-of-type,
+nav>button:hover>span:last-of-type {
+    transform: scale(1);
+}
+
+/* nav SVG circular text*/
+nav>button>svg {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    opacity: 0;
+    text-transform: uppercase;
+    transition: all 300ms ease-in-out;
+    color: var(--_clr-txt-svg);
+}
+/* hover - reveal rotating SVG */
+nav>button:focus-visible>svg,
+nav>button:hover>svg {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition-delay: 150ms;
+    transition: all 300ms ease-in-out;
+}
+/*
+@supports (-webkit-touch-callout: none) {
+  /* specific to iOS devices * / 
+  button svg {
+      /* adjust position for iOS * /
+      translate: -50% -50%;
+      animation: rotate var(--_ani-speed) linear infinite;
+  }
+}
+@supports not (-webkit-touch-callout: none) {
+ */
+
+
+ button svg g {
+    transform-origin: center;
+    animation: rotate var(--_ani-speed) linear infinite;
+ }
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
 button:hover {
-    background-color: #d0a0cc; /* Darker on hover */
+    background-color: #a44c00; /* Darker on hover */
     transform: scale(1.05); /* Slightly larger on hover */
 }
 
@@ -138,13 +257,13 @@ header nav ul li {
 header nav ul li a {
     display: block;
     padding: 10px 20px; /* Adjust padding as needed */
-    color: #333;
+    color: #8b13a1;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 header nav ul li a:hover {
-    background-color: #f0f0f0;
+    background-color: #c79dcc;
     transform: scale(1.05); /* Slightly expand on hover */
 }
 
@@ -154,8 +273,8 @@ header nav ul li:hover::after {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
+    background-color: #490062;
+    color: #e775fb;
     padding: 5px 10px;
     border-radius:  
  5px;
