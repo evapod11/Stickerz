@@ -138,7 +138,8 @@ h1 {
 .remove-item {
     background-color: #ff4444;
     color: white;
-    border: none;
+    border:#333;
+    border-radius: 20px;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 3px;
