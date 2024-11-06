@@ -73,6 +73,7 @@ h1 {
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    background-blend-mode: darken;
     padding: 10px;
     text-align: center;
 }
