@@ -86,7 +86,7 @@ h1 {
 
 /* Hover Effect: Expand and Border */
 .carousel-item:hover {
-    transform: scale(1.5); /* Slightly expands on hover */
+    transform: scale(1.2); /* Slightly expands on hover */
     border: 5px solid #d45d00; /* Add a border color on hover */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
 }
@@ -105,7 +105,7 @@ h1 {
 }
 
 .add-to-cart:hover {
-    background-color: #a44c00; /* Darker on hover */
+    background-color: #f200fa; /* Darker on hover */
 }
 /* Keyframes for Initial Motion */
 @keyframes scroll {
